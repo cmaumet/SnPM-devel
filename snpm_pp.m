@@ -1752,7 +1752,7 @@ if WrtFlt || nidm_export
   nidm.NeuroimagingAnalysisSoftware_label = 'SnPM';
   
   % TODO: This temp file should only be produced if NIDM export is requested
-  jsonwrite('snpm_nidm_thresh.json', nidm, ...
+  spm_jsonwrite('snpm_nidm_thresh.json', nidm, ...
             struct('indent','    ', 'escape', false));
   spm_nidmresults(nidm, CWD)
 end
