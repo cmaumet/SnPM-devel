@@ -16,6 +16,8 @@ toolboxDir = spm_str_manip(mfilename('fullpath'), 'h');
 if ~isdeployed
     addpath(toolboxDir);
     addpath(fullfile(toolboxDir, 'config'));
+    addpath(fullfile(toolboxDir, 'test'));
+    addpath(fullfile(toolboxDir, 'test', 'common'));
 end
 
 snpmBatch = snpm_cfg_master;

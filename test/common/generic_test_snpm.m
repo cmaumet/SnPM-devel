@@ -105,6 +105,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{3}.spm.tools.snpm.inference.Tsign = 1;
             testCase.matlabbatch{3}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPM_filtered_10none.nii';
             
+            % NIDM export
+            testCase.matlabbatch{3}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{3}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{3}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{3}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
+            
             if testCase.compaWithSpm
                 % SPM batch
                 testCase.spmBatch{2}.spm.stats.fmri_est.spmmat(1) = cfg_dep;
@@ -324,6 +330,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Vox.VoxSig.TFth = 1.6;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_vox_unc_t16.nii';
             
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
+            
             % FWE voxel-wise p<0.5
             testCase.matlabbatch{end+1}.spm.tools.snpm.inference.SnPMmat(1) = cfg_dep;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.SnPMmat(1).tname = 'SnPM.mat results file';
@@ -334,6 +346,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Vox.VoxSig.FWEth = 0.1;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_vox_fwe_p10.nii'; 
             
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
+            
             % FDR voxel-wise p<0.5
             testCase.matlabbatch{end+1}.spm.tools.snpm.inference.SnPMmat(1) = cfg_dep;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.SnPMmat(1).tname = 'SnPM.mat results file';
@@ -343,6 +361,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.SnPMmat(1).src_output = substruct('.','SnPM');
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Vox.VoxSig.FDRth = 0.7;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_vox_fdr_p70.nii';  
+            
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
         end
         
         function additional_cluster_results(testCase)
@@ -357,6 +381,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusSize.ClusSig.PthC = 0.1;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_clus_4_unc_p10.nii';
             
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
+            
             % Uncorrected (cluster forming u>4) cluster-wise k>6
             testCase.matlabbatch{end+1}.spm.tools.snpm.inference.SnPMmat(1) = cfg_dep;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.SnPMmat(1).tname = 'SnPM.mat results file';
@@ -367,6 +397,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusSize.CFth = 4;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusSize.ClusSig.Cth = 6;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_clus_4_unc_k6.nii';
+            
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
             
             % FWE (cluster forming u>4) cluster-wise p<0.5
             testCase.matlabbatch{end+1}.spm.tools.snpm.inference.SnPMmat(1) = cfg_dep;
@@ -379,6 +415,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusSize.ClusSig.FWEthC = 0.5;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_clus_4_fwe_p50.nii'; 
             
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
+            
             % FWE (cluster forming u>5) cluster-wise p<0.5
             testCase.matlabbatch{end+1}.spm.tools.snpm.inference.SnPMmat(1) = cfg_dep;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.SnPMmat(1).tname = 'SnPM.mat results file';
@@ -389,6 +431,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusSize.CFth = 5;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusSize.ClusSig.FWEthC = 0.5;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_clus_5_fwe_p50.nii';  
+            
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
         end
         
         function additional_predefined_cluster_results(testCase)
@@ -406,6 +454,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusSize.ClusSig.PthC = 0.1;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_clus_p10_unc_p10.nii';
             
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
+            
             % FWE (cluster forming p<0.1) cluster-wise p<0.5
             testCase.matlabbatch{end+1}.spm.tools.snpm.inference.SnPMmat(1) = cfg_dep;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.SnPMmat(1).tname = 'SnPM.mat results file';
@@ -416,6 +470,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusSize.CFth = NaN;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusSize.ClusSig.FWEthC = 0.5;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_clus_p10_fwe_p50.nii'; 
+            
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
         end
         
         function additional_cluster_mass_results(testCase)
@@ -430,6 +490,12 @@ classdef generic_test_snpm < matlab.unittest.TestCase
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Thr.Clus.ClusMass.Theta = 0.5;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.Tsign = 1;
             testCase.matlabbatch{end}.spm.tools.snpm.inference.WriteFiltImg.name = 'SnPMt_filtered_cluss_mass.nii';
+            
+            % NIDM export
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.modality = 'FMRI';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.refspace = 'ixi';
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.nsubj = 18;
+            testCase.matlabbatch{end}.spm.tools.snpm.inference.export.nidm.group.label = 'Control';
         end
         
         function compare_batch_with_inter(testCase, zeroingNaNs)
